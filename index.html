@@ -11,75 +11,118 @@
 <body>
     <header>
         <div class="navigation">
-            <div class="highScoreLink">
-                <H1>View High Scores</H1>
+            <div id="highScoreLink">
+                <H1 id="highScoreLinkText">View High Scores</H1>
             </div>  
-            <div class="timer">
-                <h2>Time: <span class="countdown">0</span></h2>
+            <div id="timer">
+                <h2>Time Remaining: <span class="countdown">0</span></h2>
             </div>
         </div>  
     </header>
     
     <main>
         <div class="container">
-            <div class="codingQuizBox">
+            <div id="codingQuizBox">
                 <h1>Coding Quiz Challenge</h1>
-                <p>Try to answer the following code-related questions within the time limit. Keep in mind the incorrect answers will penalize your scoretime by ten seconds!</p>
+                <p>Try to answer the following code-related questions within the time limit. Keep in mind the incorrect answers will penalize your scoretime by ten seconds! Once you click "Start Quiz," the quiz will begin. Good luck!</p>
                 <button id="startButton">Start Quiz</button>
             </div>
-        <div class="question1 hide"> 
-            <h1 class="questionTitle">What symbol goes before the class selector in CSS?</h1>
-            <button class="questionButton">!</button>
-            <button class="questionButton">$</button>
-            <button class="questionButton">.</button>
-            <button class="questionButton">#</button>
-        </div>
-        <div class="question2 hide">
+            
+            <div id="question1"> 
+            <h1 class="questionTitle">What symbol goes before the class selector in your CSS sheet?</h1>
+                <button class ="buttonFormat" class="wrong" onclick="wrong()">!</button>
+                <button class ="buttonFormat" class="wrong" onclick="wrong()">$</button>
+                <button class ="buttonFormat" id="correct1">.</button>
+                <button class ="buttonFormat" class="wrong" onclick="wrong()">#</button>
+                <div id="wrongMessage">
+                    <p>Incorrect! The correct answer is ".".</p>
+                </div>
+                <div id="correctMessage">
+                    <p>Correct! Great job!</p>
+                </div>     
+            </div>
+            <div id="question2">
             <h1 class="questionTitle">What is needed to finish the li element at the end of the line?</h1>
-            <button class="questionButton">.li</button>
-            <button class="questionButton">/li</button>
-            <button class="questionButton">li</button>
-            <button class="questionButton">#li</button>  
-        </div>
-        <div class="question3 hide">
+                <button class ="buttonFormat" class="wrong2" onclick="wrong2()">.li</button>
+                <button class ="buttonFormat" id="correct2" >/li</button>
+                <button class ="buttonFormat" class="wrong2" onclick="wrong2()">li</button>
+                <button class ="buttonFormat" class="wrong2" onclick="wrong2()">#li</button>
+                <div id="wrongMessage2">
+                    <p>Incorrect! The correct answer is "/li".</p>
+                </div>  
+                <div id="correctMessage2">
+                    <p>Correct! You rock!</p>
+                </div> 
+            </div>
+            <div id="question3">
             <h1 class="questionTitle">What is needed when linking a style sheet to your html?</h1>
-            <button class="questionButton">ref=</button>
-            <button class="questionButton">link=</button>
-            <button class="questionButton">.href=</button>
-            <button class="questionButton">href=</button>
-        </div>
-        <div class="question4 hide">
-            <h1 class="questionTitle">What is Dimitri(yourt instructor)'s last name?</h1>
-            <button class="questionButton">Bradley</button>
-            <button class="questionButton">Bilinkin</button>
-            <button class="questionButton">Bilenkin</button>
-            <button class="questionButton">Bradford</button>
-        </div>
-        <div class="question5 hide">
+                <button class ="buttonFormat" class="wrong3" onclick="wrong3()">refes=</button>
+                <button class ="buttonFormat" class="wrong3" onclick="wrong3()">blink=</button>
+                <button class ="buttonFormat" class="wrong3" onclick="wrong3()">.href=</button>
+                <button class ="buttonFormat" id="correct3">href=</button>
+                <div id="wrongMessage3">
+                    <p>Incorrect! The correct answer is "href=".</p>
+                </div>  
+                <div id="correctMessage3">
+                    <p>Correct! Almost there!</p>
+                </div>
+            </div>
+            <div id="question4">
+            <h1 class="questionTitle">What is Dimitri(your instructor)'s last name?</h1>
+                <button class ="buttonFormat" class="wrong4" onclick="wrong4()">Bradley</button>
+                <button class ="buttonFormat" class="wrong4" onclick="wrong4()">Bilinkin</button>
+                <button class ="buttonFormat" id="correct4">Bilenkin</button>
+                <button class ="buttonFormat" class="wrong4" onclick="wrong4()">Bradford</button>
+                <div id="wrongMessage4">
+                    <p>Incorrect! The correct answer is "Bilenkin".</p>
+                </div>  
+                <div id="correctMessage4">
+                    <p>Correct! You were paying attention in class!</p>
+                </div>
+            </div>
+            <div id="question5">
             <h1 class="questionTitle">What does CSS stand for?</h1>
-            <button class="questionButton">Cascading Styles Sheet</button>
-            <button class="questionButton">Cascading Stat Sheet</button>
-            <button class="questionButton">Cascading Style Sheet</button>
-            <button class="questionButton">Cascading Styles Sheets</button> 
-        </div>
-        <div class="initials hide">
+                <button class ="buttonFormat" class="wrong5" onclick="wrong5()">Cascading Styles Sheet</button>
+                <button class ="buttonFormat" class="wrong5" onclick="wrong5()">Cascading Stat Sheet</button>
+                <button class ="buttonFormat" id="correct5">Cascading Style Sheet</button>
+                <button class ="buttonFormat" class="wrong5" onclick="wrong5()">Cascading Styles Sheets</button> 
+                <div id="wrongMessage5">
+                    <p>Incorrect! The correct answer is "Cascading Style Sheet".</p>
+                </div>  
+                <div id="correctMessage5">
+                    <p>Correct! Very nice!</p>
+                </div>
+            </div>
+            <div id="initials">
                 <h1>All done!</h1>
-                <p>Your final score is<span id="remainingTime"></span> .</p>
-                <p>Enter initials <input type="text" id="userInitials"> <button id="submitInitials">Submit</button></p>
-
-
-        </div>
-        <div class="score hide">
-                <h1>Highscores</h1>
-                <ol>
-                    <li>AB - 22</li>
-
+                <p>Your final score is:</p>
+                    <div id="remainingTime"></div>
+                <p>Enter initials <input type="text" id="userInitials"></p> 
+                <button id="submitInitials">Submit</button>
+            </div>
+            <div id="scoreCard">
+                <h1>High Scores</h1>
+                <ol id="orderedList">
                 </ol>
-
-
-
-
+                <button id="tryAgain">Try Again</button>
+                <button id="clearScores">Clear Scores</button>
+            </div>
         </div>
+        <div id="advance1">   
+        <button id="next">Next Question</button>
+        </div>
+        <div id="advance2">   
+        <button id="next">Next Question</button>
+        </div>
+        <div id="advance3">   
+        <button id="next">Next Question</button>
+        </div>
+        <div id="advance4">   
+        <button id="next">Next Question</button>
+        </div>
+        <div id="advance5">   
+        <button id="next">Next Question</button>
+        </div>    
     </main>
     
     <footer>
